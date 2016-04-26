@@ -160,6 +160,6 @@ body {
 body.loading {
     overflow: hidden;   
 }
-body.loading .modal {
+body.loading .animation {
     display: block;
 }
