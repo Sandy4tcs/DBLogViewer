@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>:::DBLog Viewer:::</title>
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="css/dataTable.bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" media="screen"  rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-ui.css" media="screen"  rel="stylesheet" type="text/css"/>
+    <link href="css/dataTables.jqueryui.min.css" media="screen"  rel="stylesheet" type="text/css"/>
+    <script  src="js/jquery-1.12.2.min.js"></script>
+    <script  src="js/jquery-ui.min.js"></script>
+    <script  src="js/jquery.dataTables.min.js"></script>
+    <script  src="js/dataTables.jqueryui.min.js"></script>
+    <script  src="js/bootstrap.min.js"></script>
+    <script src="js/logview.js"></script>
+   
+</head>
+ <body>
+	<div style="background-color:#92795c; color:white; padding:10px; border-radius:5px; font-family:Arial, Helvetica, sans-serif; position:relative; width:auto;" >
+		<table border="0" width="100%">
+			<tr>
+				<td>RunID</td>
+				<td><input type="text" name="txtrunid" id="runid" class="size"/></td>
+				<td>Entity</td>
+				<td><select name="tables" id="tables" class="sizenew">
+		  			<option value="">Select Entity</option>
+		  			<option value="accounting_period">Accounting Period</option>
+		  			<option value="accounts">Accounts</option>
+		  			<option value="amortization_fact">Amortization Fact</option>
+		  			<option value="book_fairs">Book Fairs</option>
+		  			<option value="budgetforecast_fact">Budgetforecast Fact</option>
+		  			<option value="carrier">Carrier</option>
+		  			<option value="classes">Classes</option>
+		  			<option value="cost_center">Cost Center</option>
+		  			<option value="currencies">Currencies</option>
+		  			<option value="customers">Customers</option>
+		  			<option value="employees">Employees</option>
+		  			<option value="freight_estimate">Freight Estimate</option>
+		  			<option value="items">Items</option>
+		  			<option value="locations">Locations</option>
+		   			<option value="opportunity_fact">Opportunity Fact</option>
+		    		<option value="po_fact">Po Fact</option>
+		  			<option value="payment_terms">Payment Terms</option>
+		  			<option value="product_catalouge">Product Catalouge</option>
+		    		<option value="revenue_fact">Revenue Fact</option>
+		  			<option value="subsidiaries">Subsidiaries </option>
+		  			<option value="so_fact">Sales Order Fact </option>
+		  			<option value="tax_items">Tax Items</option>
+		  			<option value="transaction_type">Transaction Type</option>
+		  			<option value="transaction_status">Transaction Status</option>
+		  			<option value="territories">Territories</option>
+		  			<option value="vendors">vendors</option>
+		  			<option value="vb_fact">Vb Fact</option>
+					</select>
+				</td>
+				<td>Date</td>
+				<td><input type="date" name="txtdate" id="etldate" class="sizenew"/></td>
+				<td><input type="button" id="button1" value="Submit" class="size" onclick="validate();"/></td>
+
+			</tr>
+		</table>
+	</div>
+
+	<div class="hidden" id="datatable">
+		<div id="tabs" >
+  			<ul>
+    			<li style="font-size:15px; font-family:Arial, Helvetica, sans-serif;"><a href="#tabs-1">Job Log</a></li>
+   				<li  style="font-size:15px; font-family:Arial, Helvetica, sans-serif;"><a href="#tabs-2">Message Log</a></li>
+    			<li  style="font-size:15px; font-family:Arial, Helvetica, sans-serif;"><a href="#tabs-3">Error Log</a></li>
+  			</ul>
+		</div>
+	</div>
+ </body>
+</html>

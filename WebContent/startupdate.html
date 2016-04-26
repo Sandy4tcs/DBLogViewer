@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ETL UI</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="update.css" />
+<link rel="stylesheet" type="text/css" href="demo.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  
+<script>
+  $(document).ready(function() {
+	    $('#example').DataTable();
+	} );
+  function myFunction() {
+	    var x, text;
+
+	    // Get the value of the input field with id="numb"
+	    x = document.getElementById("numb").value;
+
+	    // If x is Not a Number or less than one or greater than 10
+	    if (isNaN(x)) {
+	        text = "Input not valid";
+	    } else {
+	        text = "Input OK";
+	    }
+	    document.getElementById("demo").innerHTML = text;
+	}
+  
+
+  </script>
+   
+  <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+</head>
+<body>
+<h1 align="center">App Name</h1>
+<section class="container">
+			<section class="login-form">
+				<!-- <div class="panel panel-danger">
+					  <div class="panel-body">-->
+			 <div class="panel panel-danger>
+					<div>
+					    <form method="post" action="">
+					    	<div class="input input--isao">
+					    		<input class="input__field input__field--isao" type="text" id="numb" onkeydown="myFunction()" />
+					<label class="input__label input__label--isao" for="input-38" data-content="Run-Id">
+						<span class="input__label-content input__label-content--isao"><h4>Run-id</h4></span>
+					</label>
+					    	</div>
+					    	
+					    	<div class="input input--isao">
+					    		<input class="input__field input__field--isao" type="date" id="input-39" />
+					<label class="input__label input__label--isao" for="input-39" data-content="Date">
+						<span class="input__label-content input__label-content--isao"><h4>Date</h4></span>
+					</label>
+								
+							</div>
+							<div class="input input--isao">
+					    		<input class="input__field input__field--isao" type="text" id="input-40" />
+					<label class="input__label input__label--isao" for="input-40" data-content="Entity">
+						<span class="input__label-content input__label-content--isao"><h4>Entity</h4></span>
+					</label>
+							</div>
+							<div class="input input--isao">
+							<select class="input__field input__field--isao animate" id="input-40">
+							<option selected="selected" disabled="disabled">Select mode</option>
+ 									 <option value="Normal">Normal</option>
+  									 <option value="Re-Process">Re-Process</option>
+  									 <option value="Error-Process">Error-Process</option>
+									 <option value="Hierarchy">Hierarchy</option>
+									 <option value="RunStat">RunStat</option>
+								</select>
+					        <label class="input__label input__label--isao" for="input-40" data-content="Mode">
+						      <span class="input__label-content input__label-content--isao"><h4>Mode</h4></span>
+					        </label>
+					    		
+								
+								</div>
+								
+							</div>
+							
+							<div class="form-group">
+								<button type="submit" name="go" class="btn btn-sm btn-info size">SUBMIT</button>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</section>
+	</section>
+	
+	
+	<div class="bs-example">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Job Log</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Message Log</a></li>
+         <li><a data-toggle="tab" href="#sectionC">Error Log</a></li>
+    
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+              <h3>Section A</h3>
+             <p>This is job log</p>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+            <h3>Section B</h3>
+            <p>This is Message log</p>
+        </div>
+        <div id="sectionC" class="tab-pane fade">
+        <h3>Section C</h3>
+        <p>this is error log</p>
+        </div>
+       
+    </div>
+</div>
+  </md-content>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert</title>
+<link href="css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="css/bootstrap.min.css" media="screen"  rel="stylesheet" type="text/css"/>
+<link href="css/jquery-ui.css" media="screen"  rel="stylesheet" type="text/css"/>
+<script  src="js/jquery-1.12.2.min.js"></script>
+<script  src="js/jquery-ui.min.js"></script>
+<script  src="js/bootstrap.min.js"></script>
+<script>
+
+function validate() {
+	var runid = "";
+	var etldate = "";
+	var tabs = "";
+	var count=0;
+	
+	
+	if($("#runid").val() != "")
+		{
+			runid = parseInt($("#runid").val());
+		}
+	
+	if ($("#etldate").val() != "")
+		{
+			etldate = $("#etldate").val();
+		}
+	
+	if ($("#tables").val() != "")
+	{
+		tabs = $("#tables").val();
+		//alert(entity);
+	}
+	
+	if(!runid && !etldate) {
+		
+		alert("Either RunID or Date is requird !!");
+		
+	} else {
+
+		var strHtml = "";
+		var parsedData = "";
+		alert("test");
+		$.ajax({
+			
+			type: 'GET', 
+		    url: "http://" + location.hostname +":8080/DBLogViewer/rest/joblog/retrivejoblog?runid=" + runid + "&&etl_date=" + etldate + "&&tabs=" + tabs, 
+		    data: { get_param: 'value' }, 
+		    dataType: 'json',
+		    success: function (jd) { 
+		       
+		    	for (var i = 0; i < jd.length; i++) {
+		    		//parsedData = $('<tr/>');
+		    		//parsedData.append("<td>" + data[i].User_Name + "</td>");
+		    		//parsedData.append("<td>" + data[i].score + "</td>");
+		    		//parsedData.append("<td>" + data[i].team + "</td>");
+		            //$('table').append(tr);
+		    		alert(jd[i].JobId);
+		             
+		    	}
+		    	
+		    	alert(parsedData);
+                 
+		    }
+               });
+		
+		
+		
+		
+	}
+}
+	
+</script>
+
+</head>
+
+<body>
+   
+<div style="background-color:#92795c; color:white; padding:10px; border-radius:5px; font-family:Arial, Helvetica, sans-serif; position:relative; width:auto;" >
+
+<table border="0" width="100%">
+<tr>
+<td>RunID</td>
+<td><input type="text" name="txtrunid" id="runid" class="size"/></td>
+<td>Entity</td>
+<td><select name="tables" id="tables" class="sizenew">
+		  <option value="">Select Entity</option>
+		  <option value="accounting_period">Accounting Period</option>
+		  <option value="accounts">Accounts</option>
+		   <option value="amortization_fact">Amortization Fact</option>
+		  <option value="book_fairs">Book Fairs</option>
+		  <option value="carrier">Carrier</option>
+		  <option value="classes">Classes</option>
+		  <option value="cost_center">Cost Center</option>
+		  <option value="currencies">Currencies</option>
+		  <option value="customers">Customers</option>
+		  <option value="employees">Employees</option>
+		  <option value="freight_estimate">Freight Estimate</option>
+		  <option value="items">Items</option>
+		  <option value="locations">Locations</option>
+		  <option value="opportunity_fact">Opportunity Fact</option>
+		  <option value="po_fact">Po Fact</option>
+		  <option value="payment_terms">Payment Terms</option>
+		  <option value="product_catalouge">Product Catalouge</option>
+		  <option value="revenue_fact">Revenue Fact</option>
+		  <option value="subsidiaries">Subsidiaries </option>
+		  <option value="tax_items">Tax Items</option>
+		  <option value="transaction_type">Transaction Type</option>
+		  <option value="transaction_status">Transaction Status</option>
+		  <option value="territories">Territories</option>
+		  <option value="vendors">vendors</option>
+		  <option value="vb_fact">Vb Fact</option>
+		  
+		</select></td>
+<td>Date</td>
+<td><input type="date" name="txtdate" id="etldate" class="sizenew"/></td>
+<td><input type="button" id="button1" value="Submit" class="size" onclick="validate();"/></td>
+
+</tr>
+</table>
+
+
+</div>
+   
+   
+   <table id="table1" class="table table-bordered display compact"  style="width:100%">
+         <thead>
+            <tr>
+                <th>MessageID</th>
+                <th id="thOne">RunID</th>
+                 <th>Message Desc</th>
+                <th>Target Table</th>
+                <th>Message Stage</th>
+                <th>Message Type</th>
+                <th>Message TimeStamp</th>
+                <th>Subsidiary ID</th>
+            </tr>
+        </thead>
+        <tboby id="tbody">
+        
+        </tboby>
+        <tfoot>
+             
+            <tr>
+                <th>MessageID</th>
+                <th id="thOne">RunID</th>
+                 <th>Message Desc</th>
+                <th>Target Table</th>
+                <th>Message Stage</th>
+                <th>Message Type</th>
+                <th>Message TimeStamp</th>
+                <th>Subsidiary ID</th>
+            </tr>
+       
+        </tfoot>
+        
+    </table>
+    
+</body>
+</html>
