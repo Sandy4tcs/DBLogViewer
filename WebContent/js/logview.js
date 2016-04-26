@@ -132,7 +132,7 @@
         	$.ajax({
                 "url": "http://" + location.hostname +":8080/DBLogViewer/rest/joblog/retriveerrorlog?runid=" + runid + "&&etl_date=" + etldate + "&&tabs=" + tabs,
                 "success": function(json) {
-                    var tableHeaders;
+                    var tableHeaders="";
                     $.each(json.columns, function(i, val){
                         tableHeaders += "<th>" + val + "</th>";
                     });
@@ -196,7 +196,7 @@
         	$.ajax({
                 "url": "http://" + location.hostname +":8080/DBLogViewer/rest/joblog/retriveerrorlog?runid=" + runid + "&&etl_date=" + etldate + "&&tabs=" + tabs,
                 "success": function(json) {
-                    var tableHeaders;
+                    var tableHeaders="";
                     $.each(json.columns, function(i, val){
                         tableHeaders += "<th>" + val + "</th>";
                     });
