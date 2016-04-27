@@ -133,10 +133,11 @@
                 "url": "http://" + location.hostname +":8080/DBLogViewer/rest/joblog/retriveerrorlog?runid=" + runid + "&&etl_date=" + etldate + "&&tabs=" + tabs,
                 "success": function(json) {
                     var tableHeaders="";
+                    var no=1;
                     $.each(json.columns, function(i, val){
-                        tableHeaders += "<th>" + val + "</th>";
+                        tableHeaders += "<th id=\"th"+no+"\">" + val + "</th>";
+                        no++;
                     });
-                     
                     $("#tabs-3").empty();
                     $("#tabs-3").append('<table id="displayTable" class="table table-bordered display compact" cellspacing="0" width="100%"><thead><tr>' + tableHeaders + '</tr></thead><tfoot><tr>' + tableHeaders + '</tr></tfoot></table>');
                     $('#displayTable').dataTable(json);
@@ -197,10 +198,11 @@
                 "url": "http://" + location.hostname +":8080/DBLogViewer/rest/joblog/retriveerrorlog?runid=" + runid + "&&etl_date=" + etldate + "&&tabs=" + tabs,
                 "success": function(json) {
                     var tableHeaders="";
+                    var no=1;
                     $.each(json.columns, function(i, val){
-                        tableHeaders += "<th>" + val + "</th>";
+                        tableHeaders += "<th id=\"th"+no+"\">" + val + "</th>";
+                        no++;
                     });
-                     
                     $("#tabs-3").empty();
                     $("#tabs-3").append('<table id="displayTable" class="table table-bordered display compact" cellspacing="0" width="100%"><thead><tr>' + tableHeaders + '</tr></thead><tfoot><tr>' + tableHeaders + '</tr></tfoot></table>');
                     $('#displayTable').dataTable(json);
