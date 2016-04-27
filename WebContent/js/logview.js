@@ -232,7 +232,15 @@
     $(document).click(function(event) {
         var event = $(event.target);
         if(event[0].id=="ui-id-3"){
-        	$('#abs-3').click();
+        	$('#th1').click();
+        	 
+        }
+    });
+    
+    $(document).click(function(event) {
+        var event = $(event.target);
+        if(event[0].id=="button1"){
+        	$('#ui-id-1').click();
         	 
         }
     });
